@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.br.nava.cep.service.ConsultaCepService;
 import com.br.nava.dto.Cep;
 
-import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -20,7 +19,7 @@ public class ConsultaCepController {
 
 	@GetMapping("consulta-cep")
 	private Cep consultacep(
-			@Parameter(name = "cep", description = "Cep do endereço", required = true) @RequestHeader("cep") final String cep) {
+		 @RequestHeader("cep") final String cep) {
 
 		return consultaCepService.consultaCep(cep);
 	}
